@@ -1,0 +1,48 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.mds-text-field {
+  position: relative;
+  width: 280px;
+  height: 56px;
+}
+
+.mds-text-field__label {
+  position: absolute;
+  opacity: 0.6;
+  line-height: 56px;
+  margin-left: 12px;
+  transition: ease-in-out 120ms;
+}
+/*
+thx u
+https://css-tricks.com/box-sizing/
+*/
+.mds-text-field__input {
+  padding: 16px 12px 0 12px;
+  border-radius: 4px 4px 0 0;
+  background-color: #E8E8E8;
+  width: inherit;
+  height: inherit;
+  border: none;
+  box-sizing: border-box;
+}
+.mds-text-field__input:focus {
+  outline: none;
+}
+
+/*https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1TKi-wOcOI4c_XQswgLFfHS1078d1wAzJ%2Ftextfields-filled-states.png*/
+.mds-text-field__indicator {
+  position: absolute;
+  width: inherit;
+  bottom: 0;
+  transform: scaleX(0);
+  transition: 120ms ease-in-out;
+  height: 2px;
+  background-color: #6200ee;
+}
+
+.mds-text-field__indicator--focused {
+
+}

@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="mds.css">
   <script src="mds.js"></script>
 </head>
 <body>
-  <div class="hej">asdasdasd</div>
-  <div class="ping">pong</div>
+  <!--https://material.io/design/components/text-fields.html#anatomy-->
+  <div class="mds-text-field">
+    <label class="mds-text-field__label" for="">Label</label>
+    <input class="mds-text-field__input" type="text">
+    <span class="mds-text-field__indicator"></span>
+  </div>
+
   <script>
-    mds.textField(document.querySelector(".hej"));
-    mds.switch(document.querySelector(".ping"));
+    mds.textField(document.querySelector(".mds-text-field__input"));
   </script>
 </body>
 </html>
