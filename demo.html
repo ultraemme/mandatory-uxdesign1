@@ -8,15 +8,46 @@
   <script src="mds.js"></script>
 </head>
 <body>
+
   <!--https://material.io/design/components/text-fields.html#anatomy-->
   <div class="mds-text-field">
     <label class="mds-text-field__label" for="">Label</label>
     <input class="mds-text-field__input" type="text">
-    <span class="mds-text-field__indicator"></span>
+    <div class="mds-text-field__indicator"></div>
   </div>
 
+  <div class="mds-text-field">
+    <label class="mds-text-field__label" for="">Label</label>
+    <input class="mds-text-field__input" type="text">
+    <div class="mds-text-field__indicator"></div>
+  </div>
+
+  <div class="mds-text-field">
+    <label class="mds-text-field__label" for="">Label</label>
+    <input class="mds-text-field__input" type="text" disabled="disabled">
+    <div class="mds-text-field__indicator"></div>
+  </div>
+
+  <div class="mds-switch">
+    <div class="mds-switch__track"></div>
+    <div class="mds-switch__thumb"></div>
+  </div>
+
+  
+  <div class="mds-switch mds-switch--disabled">
+    <div class="mds-switch__track"></div>
+    <div class="mds-switch__thumb"></div>
+  </div>
+
+  <div class="mds-checkbox">
+    <input class="mds-checkbox__toggle" type="checkbox" checked="checked">
+    <div class="mds-checkbox__facade"></div>
+  </div>
+
+
   <script>
-    mds.textField(document.querySelector(".mds-text-field__input"));
+    mds.textField(document.querySelectorAll(".mds-text-field__input"));
+    mds.switch(document.querySelectorAll(".mds-switch"));
   </script>
 </body>
 </html>

@@ -1,38 +1,57 @@
 window.mds = {
-  textField: function (element) {
-    let label = document.querySelector(".mds-text-field__label");
-    let indicator = document.querySelector(".mds-text-field__indicator");
-    element.addEventListener("focus", function (e) {
-      indicator.style.transform = "scaleX(1)";
-      label.style.color = "#6200ee";
-      label.style.lineHeight = "32px";
-      label.style.fontSize = "12px";
-      label.style.opacity = "1";
-    })
-    element.addEventListener("blur", function (e) {
-      if (!e.target.value) {
-        indicator.style.transform = "scaleX(0)";
-        label.style.color = null;
-        label.style.lineHeight = "56px";
-        label.style.fontSize = null;
-        label.style.opacity = "0.6";
-      }
-    })
+  textField: function (elements) {
+    for (let element of elements) {
+      let label = element.parentNode.children[0];
+      let indicator = element.parentNode.children[2];
+      element.addEventListener("focus", function (e) {
+        if (!label.classList.contains("mds-text-field__label--focused")) {
+          element.placeholder = "Placeholder text";
+          label.classList.add("mds-text-field__label--focused");
+          indicator.classList.add("mds-text-field__indicator--focused");
+        }
+      })
+      element.addEventListener("blur", function (e) {
+        if (!e.target.value) {
+          element.placeholder = "";
+          label.classList.remove("mds-text-field__label--focused")
+          indicator.classList.remove("mds-text-field__indicator--focused");
+        }
+      })
+    }
   },
-  switch: function (element) {
-    element.addEventListener("click", function (e) {
-      element.style.color = "blue";
-      console.log(element);
-    })
+  switch: function (elements) {
+    for (let element of elements) {
+      let track = element.children[0];
+      let thumb = element.children[1];
+      element.addEventListener("click", function (e) {
+        if (!element.classList.contains("mds-switch--disabled")) {
+          if (e.target.classList.contains("mds-switch__thumb") || e.target.classList.contains("mds-switch__track")) {
+            if (!track.classList.contains("mds-switch__track--on")) {
+              track.classList.add("mds-switch__track--on");
+              thumb.classList.add("mds-switch__thumb--on");
+            } else {
+              track.classList.remove("mds-switch__track--on");
+              thumb.classList.remove("mds-switch__thumb--on");
+            }
+          }
+        } else {
+          console.log("element is disabled");
+        }
+      })
+    }
   },
-  checkbox: function (element) {
-    element.addEventListener("click", function (e) {
-      console.log(element);
-    })
+  checkbox: function (elements) {
+    for (let element of elements) {
+      element.addEventListener("click", function (e) {
+        console.log(element);
+      })
+    }
   },
-  radioButton: function (element) {
-    element.addEventListener("click", function (e) {
-      console.log(element);
-    })
+  radioButton: function (elements) {
+    for (let element of elements) {
+      element.addEventListener("click", function (e) {
+        console.log(element);
+      })
+    }
   }
 }
