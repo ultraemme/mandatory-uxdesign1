@@ -21,22 +21,8 @@ window.mds = {
   },
   switch: function (elements) {
     for (let element of elements) {
-      let track = element.children[0];
-      let thumb = element.children[1];
       element.addEventListener("click", function (e) {
-        if (!element.classList.contains("mds-switch--disabled")) {
-          if (e.target.classList.contains("mds-switch__thumb") || e.target.classList.contains("mds-switch__track")) {
-            if (!track.classList.contains("mds-switch__track--on")) {
-              track.classList.add("mds-switch__track--on");
-              thumb.classList.add("mds-switch__thumb--on");
-            } else {
-              track.classList.remove("mds-switch__track--on");
-              thumb.classList.remove("mds-switch__thumb--on");
-            }
-          }
-        } else {
-          console.log("element is disabled");
-        }
+        console.log(element);
       })
     }
   },
