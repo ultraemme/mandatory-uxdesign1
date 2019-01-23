@@ -1,9 +1,12 @@
+let test;
+
 window.mds = {
   textField: function (elements) {
     for (let element of elements) {
       let label = element.parentNode.children[0];
       let indicator = element.parentNode.children[2];
       element.addEventListener("focus", function (e) {
+        console.log(element);
         if (!label.classList.contains("mds-text-field__label--focused")) {
           element.placeholder = "Placeholder text";
           label.classList.add("mds-text-field__label--focused");

@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="mds.css">
   <script src="mds.js"></script>
 </head>
 <body>
 
-  <!--https://material.io/design/components/text-fields.html#anatomy-->
   <div class="mds-text-field">
     <label class="mds-text-field__label" for="">Label</label>
     <input class="mds-text-field__input" type="text">
@@ -23,8 +24,8 @@
   </div>
 
   <div class="mds-text-field">
-    <label class="mds-text-field__label" for="">Label</label>
-    <input class="mds-text-field__input" type="text" disabled="disabled">
+    <label class="mds-text-field__label" for="">Disabled</label>
+    <input class="mds-text-field__input mds-text-field__input--disabled" type="text" disabled>
     <div class="mds-text-field__indicator"></div>
   </div>
 
@@ -34,22 +35,87 @@
     <div class="mds-switch__thumb"></div>
   </div>
 
+  <div class="mds-switch">
+    <input type="checkbox" class="mds-switch__toggle">
+    <div class="mds-switch__track"></div>
+    <div class="mds-switch__thumb"></div>
+  </div>
   
   <div class="mds-switch mds-switch--disabled">
+    <input class="mds-switch__toggle" type="checkbox" disabled>
     <div class="mds-switch__track"></div>
     <div class="mds-switch__thumb"></div>
   </div>
 
-  <!--https://www.w3.org/TR/selectors-3/#selectors-->
-  <div class="mds-checkbox">
-    <input class="mds-checkbox__toggle" type="checkbox" checked="checked">
-    <div class="mds-checkbox__facade"></div>
+  <div class="mds-switch mds-switch--disabled">
+    <input class="mds-switch__toggle" type="checkbox" disabled checked>
+    <div class="mds-switch__track"></div>
+    <div class="mds-switch__thumb"></div>
   </div>
 
+  <div class="mds-checkbox">
+    <input class="mds-checkbox__toggle" type="checkbox">
+    <label class="mds-checkbox__label" for="">Placeholder</label>
+    <div class="mds-checkbox__facade">
+      <i class="material-icons mds-checkbox__facade__icon">done</i>
+    </div>
+  </div>
+
+  <div class="mds-checkbox">
+    <input class="mds-checkbox__toggle  mds-checkbox__toggle--disabled" type="checkbox" disabled>
+    <label class="mds-checkbox__label" for="">Disabled</label>
+    <div class="mds-checkbox__facade">
+      <i class="material-icons mds-checkbox__facade__icon">done</i>
+    </div>
+  </div>
+
+  <div class="mds-checkbox">
+    <input class="mds-checkbox__toggle  mds-checkbox__toggle--disabled" type="checkbox" disabled checked>
+    <label class="mds-checkbox__label" for="">Disabled</label>
+    <div class="mds-checkbox__facade">
+      <i class="material-icons mds-checkbox__facade__icon">done</i>
+    </div>
+  </div>
+
+  <div class="mds-radio">
+    <div class="mds-radio__container">
+      <input class="mds-radio__toggle" type="radio" name="placeholder">
+      <label class="mds-radio__label" for="">Placeholder 1</label>
+      <div class="mds-radio__facade">
+        <div class="mds-radio__facade__innercircle"></div>
+      </div>
+    </div>
+    <div class="mds-radio__container">
+      <input class="mds-radio__toggle" type="radio" name="placeholder">
+      <label class="mds-radio__label" for="">Placeholder 2</label>
+      <div class="mds-radio__facade">
+        <div class="mds-radio__facade__innercircle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mds-radio">
+    <div class="mds-radio__container">
+      <input class="mds-radio__toggle mds-radio__toggle--disabled" type="radio" name="mock" disabled>
+      <label class="mds-radio__label" for="">Disabled 1</label>
+      <div class="mds-radio__facade">
+        <div class="mds-radio__facade__innercircle"></div>
+      </div>
+    </div>
+    <div class="mds-radio__container">
+      <input class="mds-radio__toggle mds-radio__toggle--disabled" type="radio" name="mock" checked disabled>
+      <label class="mds-radio__label" for="">Disabled 2</label>
+      <div class="mds-radio__facade">
+        <div class="mds-radio__facade__innercircle"></div>
+      </div>
+    </div>
+  </div>
 
   <script>
     mds.textField(document.querySelectorAll(".mds-text-field__input"));
     mds.switch(document.querySelectorAll(".mds-switch"));
+    mds.checkbox(document.querySelectorAll(".mds-checkbox"));
+    mds.radioButton(document.querySelectorAll(".mds-radio"));
   </script>
 </body>
 </html>
